@@ -1,15 +1,7 @@
 import random
 
-def choiceAgainst():
-    against = random.randint(1,3)
-    if against == 1:
-        return "Rock"
-    elif against == 2:
-        return "Paper"
-    elif against == 3:
-        return "Scissor"
-
-def game(choice, choiceAgainst):
+def game(choice):
+    choiceAgainst = random.choice(["Rock","Paper","Scissor"])
     if choice == "Rock" and choiceAgainst == "Paper":
         print("You Lose!")
         return -1
@@ -35,7 +27,7 @@ def game(choice, choiceAgainst):
 points = 0
 
 while True:
-    points +=game(input("Rock, Paper, or Scissor: "), choiceAgainst())
+    points +=game(input("Rock, Paper, or Scissor: "))
     print("points: " + str(points))
     answer = input("Want to go again? Y or N: ")
     if answer == "Y":
